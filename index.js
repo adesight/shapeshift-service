@@ -77,6 +77,6 @@ export const coinExchange = function(withdrwal, input, output, returnAddress) {
     const req = { ...post,
         ['body']: body
     }
-    const request = new Request(pair, req)
+    const request = new Request(shapeshift, req)
     return fetch(request).then((res) => res.json())
 }
