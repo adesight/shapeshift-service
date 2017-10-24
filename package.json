@@ -1,0 +1,24 @@
+{
+  "name": "shapeshift-service",
+  "version": "1.0.0",
+  "description": "shapeshift service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "islishude",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isLishude/shapeshift-service.git"
+  },
+  "keywords": [
+    "shapeshit"
+  ],
+  "bugs": {
+    "url": "https://github.com/isLishude/shapeshift-service/issues"
+  },
+  "homepage": "https://github.com/isLishude/shapeshift-service#readme"
+}
