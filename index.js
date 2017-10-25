@@ -7,76 +7,80 @@ const rate = api + 'rate/' // [coin_coin]
 const limit = api + 'limit/' // [coin_coin]
 const timeRemain = api + 'timeremaining/' // [address]
 const coinsAvailable = api + 'getcoins'
-const addressValidation = api + 'validateAddress/' //[address]/[coinSymbol]
+const addressValidation = api + 'validateAddress/' // [address]/[coinSymbol]
 const shapeshift = api + 'shift'
 
 const headers = new Headers({
-    'API-MODULE': 'shapeshift-service'
+  'Content-Type': 'application/json'
 })
 
 const get = {
-    method: 'GET',
-    headers,
+  method: 'GET',
+  headers
 }
 
 const post = {
-    method: 'POST',
-    headers,
+  method: 'POST',
+  headers
 }
 
-export const validateAddress = function(coin, symbol) {
-    const url = addressValidation + coin + '/' + symbol
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+const goFetch = function (req) {
+  return fetch(req).then((res) => res.json())
 }
 
-export const getCoinsRate = function(coin1, coin2) {
-    const url = rate + coin1 + '_' + coin2
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+export const validateAddress = function (coin, symbol) {
+  const url = addressValidation + coin + '/' + symbol
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-export const getCoinsLimit = function(coin1, coin2) {
-    const url = limit + coin1 + '_' + coin2
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+export const getCoinsRate = function (coin1, coin2) {
+  const url = rate + coin1 + '_' + coin2
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-
-export const getMarketInfo = function(coin1, coin2) {
-    const url = marketInfo + coin1 + '_' + coin2
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+export const getCoinsLimit = function (coin1, coin2) {
+  const url = limit + coin1 + '_' + coin2
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-export const getDepositStatus = function(address) {
-    const url = statusDeposit + address
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+export const getMarketInfo = function (coin1, coin2) {
+  const url = marketInfo + coin1 + '_' + coin2
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-export const getDepositTimeRemain = function(address) {
-    const url = timeRemain + address
-    const requst = new Request(url, get)
-    return fetch(requst).then((res) => res.json())
+export const getDepositStatus = function (address) {
+  const url = statusDeposit + address
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-export const getAvailabelCoins = function() {
-    const request = new Request(coinsAvailable, get)
-    return fetch(request).then((res) => res.json())
+export const getDepositTimeRemain = function (address) {
+  const url = timeRemain + address
+  const request = new Request(url, get)
+  return goFetch(request)
 }
 
-export const coinExchange = function(withdrwal, input, output, returnAddress) {
-    const pair = input + '_' + output
-    returnAddress = returnAddress || input
-    const body = {
-        withdrwal,
-        pair,
-        returnAddress
-    }
-    const req = { ...post,
-        ['body']: body
-    }
-    const request = new Request(shapeshift, req)
-    return fetch(request).then((res) => res.json())
+export const getAvailableCoins = function () {
+  const request = new Request(coinsAvailable, get)
+  return goFetch(request)
+}
+
+export const coinExchange = function (withdrawal, input, output, returnAddress) {
+  const pair = input + '_' + output
+  returnAddress = returnAddress || input
+  const body = {
+    withdrawal,
+    pair,
+    returnAddress
+  }
+  const req = {
+    ...post,
+    body
+  }
+  const request = new Request(shapeshift, req)
+  return fetch(request).then((res) => res.json())
 }
