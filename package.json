@@ -9,7 +9,9 @@
   },
   "author": "islishude",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "axios": "^0.17.0"
+  },
   "devDependencies": {},
   "repository": {
     "type": "git",

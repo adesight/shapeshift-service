@@ -1,11 +1,12 @@
 # shapeshift-service
-[Shapeshift](https://shapeshift.io/) API Module for browser,using Fetch API and ES6+.
+[Shapeshift](https://shapeshift.io/) API Module for browser using ES6+.
 
 ## Usage 
 
 ```js
 import * as shapeshift from 'shapeshift-service'
 ```
+
 All methods will return a Promise,for example
 
 ```js
@@ -173,16 +174,3 @@ Success Output:
         apiPubKey: [public API attached to this shift, if one was given]
     }  
 ```
-
-## Fetch API polyfill
-Old [browsers](https://caniuse.com/#search=fetch) doesn't support Fetch API,Chrome 42+ and Firefox 39+ supports Fetch API,Maybe you need fetch JavaScript [polyfill](https://github.com/github/fetch).
-
-```
-yarn add whatwg-fetch 
-// or
-npm i whatwg-fetch -S
-``` 
-
-## TODO
-- [x] UEAGE
-- [ ] TESTING
