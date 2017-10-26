@@ -23,7 +23,7 @@ shapeshift.getAvailableCoins()
 
 Success Output:
 
-```json
+```
 {
     "SYMBOL1" :
         {
@@ -41,7 +41,7 @@ shapeshift.validateAddress(address,symbol)
 
 Success Output:
 
-```json
+```
 {
    isValid: [true / false],
    error: [(if isvalid is false, there will be an error message)]
@@ -56,7 +56,7 @@ shapeshift.getCoinRate(coin1,coin2)
 
 Success Output:
 
- ```json  
+ ```
 {
     "pair" : "btc_ltc",
     "rate" : "70.1234"
@@ -72,7 +72,7 @@ shapeshift.getCoinsLimit(coin1,coin2)
 
 Success Output:
 
-```json
+```
     {
         "pair" : "btc_ltc",
         "limit" : "1.2345"
@@ -87,7 +87,8 @@ shapeshift.getMarketInfo(coin1,coin2)
 ```
 
 Success Output:
-```json
+
+```
     {
         "pair"     : "btc_ltc",
         "rate"     : 130.12345678,
@@ -103,7 +104,7 @@ Success Output:
 shapeshift.getDepositStatus(depositAddress)
 ```
 
-```json
+```
 // Status: No Deposits Received
     {
         status:"no_deposits",
@@ -143,7 +144,7 @@ shapeshift.getDepositTimeRemain(address)
 
 Success Output:
 
- ```json
+ ```
     {
         status:"pending",
         seconds_remaining: 600
@@ -161,7 +162,7 @@ shapeshift.coinExchange(withdrawal, input, output, returnAddress?)
 
 Success Output:
 
-```json
+```
     {
         deposit: [Deposit Address (or memo field if input coin is BTS / BITUSD)],
         depositType: [Deposit Type (input coin symbol)],
