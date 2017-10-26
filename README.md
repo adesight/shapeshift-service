@@ -6,6 +6,14 @@
 ```js
 import * as shapeshift from 'shapeshift-service'
 ```
+All methods will return a Promise,for example
+
+```js
+shapeshift.getAvailableCoins().then((res) => {
+    // The res is a plain object
+    console.log(res)
+})
+```
 
 ### Get all available coins
 
