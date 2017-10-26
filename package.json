@@ -1,6 +1,6 @@
 {
   "name": "shapeshift-service",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "shapeshift service",
   "main": "index.js",
   "scripts": {
